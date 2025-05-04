@@ -33,26 +33,45 @@ if (match) {
             }
         };
         return a
-    },
-    $AJB.general.BeginStage = function() {
-        "use strict";
+},
+$AJB.general.BeginStage = function() {
+    "use strict";
 
-        function a(a) {
-            function c() {
-                b(h, "click", function() {
-                        e.fire(g, f)
-                    }),
-                    j.innerHTML = d.isAndroid ? "GO" : "▶"
+    function a(a) {
+        function c() {
+            function triggerAction() {
+                e.fire(g, f);
             }
-            var h = a.getElementsByClassName("button")[0],
-                i = a.getElementsByClassName("text")[0],
-                j = document.getElementById("txtAr"),
-                k = {
-                    show: function() {
-                        a.style.display = ""
-                    },
-                    hide: function() {
-                        a.style.display = "none"
+
+            b(h, "click", triggerAction);
+
+            // Keyboard support: Spacebar or W
+            document.addEventListener("keydown", function(event) {
+                if (event.code === "Space" || event.key.toLowerCase() === "w") {
+                    event.preventDefault();
+                    triggerAction();
+                }
+            });
+
+            j.innerHTML = d.isAndroid ? "GO" : "▶";
+        }
+
+        var h = a.getElementsByClassName("button")[0],
+            i = a.getElementsByClassName("text")[0],
+            j = document.getElementById("txtAr"),
+            k = {
+                show: function() {
+                    a.style.display = "";
+                },
+                hide: function() {
+                    a.style.display = "none";
+                }
+            };
+
+        c();
+        return k;
+    }
+
                     },
                     level: function(a) {
                         f = a,
