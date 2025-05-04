@@ -125,18 +125,37 @@ $AJB.general.BeginStage = function() {
             return h
         }
         return a
-    },
-    $AJB.lib.addEvent = function() {
-        var a = $AJB.lib.util(),
-            b = {
-                click: "touchstart",
-                mousedown: "touchstart",
-                mouseup: "touchend"
-            };
-        return function(c, d, e, f) {
-            c.addEventListener ? c.addEventListener(a.isMobile ? b[d] || d : d, e, f) : c.attachEvent ? c.attachEvent("on" + d, e) : c["on" + d] = e
+},
+$AJB.lib.addEvent = function() {
+    var a = $AJB.lib.util(),
+        b = {
+            click: "touchstart",
+            mousedown: "touchstart",
+            mouseup: "touchend"
+        };
+    return function(c, d, e, f) {
+        // Attach mouse/touch event
+        if (c.addEventListener) {
+            c.addEventListener(a.isMobile ? b[d] || d : d, e, f);
+        } else if (c.attachEvent) {
+            c.attachEvent("on" + d, e);
+        } else {
+            c["on" + d] = e;
         }
-    },
+
+        // Add key event globally for Space or W key (non-mobile only)
+        if (!a.isMobile && d === "click") {
+            document.addEventListener("keydown", function(event) {
+                var key = event.key.toLowerCase();
+                if (key === " " || key === "spacebar" || key === "w") {
+                    event.preventDefault(); // prevent scroll on space
+                    e(); // trigger the same handler
+                }
+            });
+        }
+    }
+},
+
     $AJB.general.Levels = function() {
         "use strict";
 
