@@ -33,45 +33,26 @@ if (match) {
             }
         };
         return a
-},
-$AJB.general.BeginStage = function() {
-    "use strict";
+    },
+    $AJB.general.BeginStage = function() {
+        "use strict";
 
-    function a(a) {
-        function c() {
-            function triggerAction() {
-                e.fire(g, f);
+        function a(a) {
+            function c() {
+                b(h, "click", function() {
+                        e.fire(g, f)
+                    }),
+                    j.innerHTML = d.isAndroid ? "GO" : "▶"
             }
-
-            b(h, "click", triggerAction);
-
-            // Keyboard support: Spacebar or W
-            document.addEventListener("keydown", function(event) {
-                if (event.code === "Space" || event.key.toLowerCase() === "w") {
-                    event.preventDefault();
-                    triggerAction();
-                }
-            });
-
-            j.innerHTML = d.isAndroid ? "GO" : "▶";
-        }
-
-        var h = a.getElementsByClassName("button")[0],
-            i = a.getElementsByClassName("text")[0],
-            j = document.getElementById("txtAr"),
-            k = {
-                show: function() {
-                    a.style.display = "";
-                },
-                hide: function() {
-                    a.style.display = "none";
-                }
-            };
-
-        c();
-        return k;
-    }
-
+            var h = a.getElementsByClassName("button")[0],
+                i = a.getElementsByClassName("text")[0],
+                j = document.getElementById("txtAr"),
+                k = {
+                    show: function() {
+                        a.style.display = ""
+                    },
+                    hide: function() {
+                        a.style.display = "none"
                     },
                     level: function(a) {
                         f = a,
@@ -125,37 +106,18 @@ $AJB.general.BeginStage = function() {
             return h
         }
         return a
-},
-$AJB.lib.addEvent = function() {
-    var a = $AJB.lib.util(),
-        b = {
-            click: "touchstart",
-            mousedown: "touchstart",
-            mouseup: "touchend"
-        };
-    return function(c, d, e, f) {
-        // Attach mouse/touch event
-        if (c.addEventListener) {
-            c.addEventListener(a.isMobile ? b[d] || d : d, e, f);
-        } else if (c.attachEvent) {
-            c.attachEvent("on" + d, e);
-        } else {
-            c["on" + d] = e;
+    },
+    $AJB.lib.addEvent = function() {
+        var a = $AJB.lib.util(),
+            b = {
+                click: "touchstart",
+                mousedown: "touchstart",
+                mouseup: "touchend"
+            };
+        return function(c, d, e, f) {
+            c.addEventListener ? c.addEventListener(a.isMobile ? b[d] || d : d, e, f) : c.attachEvent ? c.attachEvent("on" + d, e) : c["on" + d] = e
         }
-
-        // Add key event globally for Space or W key (non-mobile only)
-        if (!a.isMobile && d === "click") {
-            document.addEventListener("keydown", function(event) {
-                var key = event.key.toLowerCase();
-                if (key === " " || key === "spacebar" || key === "w") {
-                    event.preventDefault(); // prevent scroll on space
-                    e(); // trigger the same handler
-                }
-            });
-        }
-    }
-},
-
+    },
     $AJB.general.Levels = function() {
         "use strict";
 
