@@ -1,20 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>CoreBall</title>
+<title>CoreBall – Unblocked Game at School | StaticQuasar931</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
 
+<!-- Canonical -->
+<link rel="canonical" href="https://sites.google.com/view/staticquasar931/gm3z/coreball" />
+
+<!-- Favicon -->
+<link rel="icon" href="https://res.cloudinary.com/dcsrqennd/image/upload/v1758857231/Aeries_Favicon_Real_StaticQuasar931_m1uorx.ico" sizes="32x32" />
+<link rel="apple-touch-icon" href="https://res.cloudinary.com/dcsrqennd/image/upload/v1758857231/Aeries_Favicon_Real_StaticQuasar931_m1uorx.ico" />
+
+<!-- Primary SEO -->
+<meta name="description" content="Play CoreBall unblocked at school or work on StaticQuasar931. Fast loading, school-safe, and mobile friendly. Try the classic CoreBall game and test your timing skills." />
+<meta name="keywords" content="CoreBall, CoreBall game, CoreBall unblocked, CoreBall school, CoreBall at school, CoreBall working at school, coreball, CoreBall classic, timing game, arcade game, unblocked game, unblocked g@me, school-safe game, school-safe g@me, static, static 931, staticq, staticq931, staticquasar, staticquasar931, 931 games, 931 g@mes, free games at school, browser game, mobile friendly game, no download game, CoreBall unbl0cked, CoreBall un-bl0cked" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CoreBall – Unblocked Game at School | StaticQuasar931" />
+<meta property="og:description" content="Play CoreBall unblocked at school or work. Fast loading, school-safe, and mobile friendly on StaticQuasar931." />
+<meta property="og:url" content="https://sites.google.com/view/staticquasar931/gm3z/coreball" />
+<meta property="og:image" content="https://sites.google.com/view/staticquasar931/assets/coreball-og.jpg" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CoreBall – Unblocked Game at School | StaticQuasar931" />
+<meta name="twitter:description" content="Play CoreBall unblocked at school or work on StaticQuasar931." />
+<meta name="twitter:image" content="https://sites.google.com/view/staticquasar931/assets/coreball-og.jpg" />
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "CoreBall",
+  "url": "https://sites.google.com/view/staticquasar931/gm3z/coreball",
+  "applicationCategory": "Game",
+  "gamePlatform": ["Web"],
+  "operatingSystem": "Browser",
+  "author": {
+    "@type": "Organization",
+    "name": "StaticQuasar931",
+    "url": "https://sites.google.com/view/staticquasar931"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "StaticQuasar931",
+    "sameAs": ["https://www.instagram.com/freeschoolgamepage/"]
+  },
+  "description": "Play CoreBall unblocked online. A timing based arcade game that runs smoothly at school and work.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
 <style type="text/css">
+/* Base */
 body {
 	background-color: #c8c8c8;
 	overflow: hidden;
 	padding: 0;
 	margin: 0;
-	/*font-family:Helvetica;*/
-	/*font-family: 'Open Sans', sans-serif, Helvetica;*/
-	font-family: Lato;
+	font-family: Lato, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
 }
+
+/* Game intro */
 .center-box {
 	text-align: center;
 	position: absolute;
@@ -26,7 +81,6 @@ body {
 }
 .title {
 	font-size: 50px;
-	/*font-family: sans-serif;*/
 }
 .button {
 	position: absolute;
@@ -37,8 +91,6 @@ body {
 	margin: -100px 0 0 -50px;
 	border: 2px solid #666;
 	color: #666;
-	-moz-border-radius: 15px;
-	-webkit-border-radius: 15px;
 	border-radius: 15px;
 	font-size: 55px;
 }
@@ -55,33 +107,189 @@ body {
 	top: 70%;
 	margin: -50px 0 0 -100px;
 }
+
+/* Top-left mini menu link */
+#sq-mini {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 10000;
+	background: rgba(255,255,255,0.9);
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: 10px;
+	padding: 6px 10px;
+	font-size: 12px;
+	line-height: 1;
+	box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	user-select: none;
+}
+#sq-mini a {
+	text-decoration: none;
+	color: #0b57d0;
+	font-weight: 600;
+}
+#sq-mini .close {
+	cursor: pointer;
+	font-weight: 700;
+	color: #888;
+}
+@keyframes twinkle {
+	0% { box-shadow: 0 0 6px rgba(255,255,255,0.6), 0 0 0 rgba(255,255,255,0); }
+	50% { box-shadow: 0 0 10px rgba(255,255,255,0.95), 0 0 24px rgba(255,255,255,0.35); }
+	100% { box-shadow: 0 0 6px rgba(255,255,255,0.6), 0 0 0 rgba(255,255,255,0); }
+}
+#sq-mini.twinkle { animation: twinkle 2.2s ease-in-out infinite; }
+
+/* Bottom-right rotating icons */
+#sq-rotating {
+	position: fixed;
+	right: 14px;
+	bottom: 14px;
+	z-index: 10000;
+	display: grid;
+	gap: 10px;
+}
+.sq-rot-btn {
+	width: 54px;
+	height: 54px;
+	border-radius: 50%;
+	border: 1px solid rgba(0,0,0,0.12);
+	background: #fff;
+	display: grid;
+	place-items: center;
+	box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+	text-decoration: none;
+	font-size: 24px;
+}
+.sr-hidden { display: none; }
+
+/* Hidden SEO block */
+#seo-coreball {
+	position: absolute;
+	left: -9999px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+/* Make sure overlays never block game clicks unintentionally */
+#sq-mini, #sq-rotating { pointer-events: auto; }
+#begin, #stage { pointer-events: auto; }
 </style>
 </head>
 <body>
 
+<!-- Leave or reload warning -->
+<script>
+window.onbeforeunload = function () {
+  return "Your game progress may not be saved. Are you sure you want to leave or reload this page?";
+};
+</script>
+
+<!-- Game canvas -->
 <canvas style="display:none;" id="stage"></canvas>
 
 <div id="begin">
 	<section class="center-box">
-		<span class="title">Core Ball</span>
+		<span class="title">CoreBall</span>
 		<div class="button">
 			<div id="txtAr" style="margin-top: 5px;"></div>
 			<div class="text"></div>
 		</div>
 		<div class="op">
-			<a id="btnFW" href="javascript:;"><img data-capture="1" src="img/btn_fw.png" /></a>
-			<span id="btnReset" style="display:inline-block;margin-left: 30px;color:#666">RESET</span>
+			<a id="btnFW" href="javascript:;"><img data-capture="1" src="img/btn_fw.png" alt="Start CoreBall" /></a>
+			<span id="btnReset" style="display:inline-block;margin-left: 30px;color:#666;cursor:pointer">RESET</span>
 			<div id="tip" style="font-size:14px;color:#555;margin-top: 15px;display:none;">关卡重置完毕</div>
 		</div>
 	</section>
 	<section id="wxArrow" style="display: none;">
 		<div style="position:absolute;width:100%;height:100%;opacity: 0.7;background-color:#000"></div>
-		<img style="position: absolute;right:25px;" src="img/arrow.png" />
+		<img style="position: absolute;right:25px;" src="img/arrow.png" alt="Arrow" />
 	</section>
 </div>
 
+<!-- Top-left small visible link with twinkle and close then reappear after 3 minutes -->
+<div id="sq-mini" class="twinkle" role="note" aria-live="polite">
+	<a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank" rel="noopener">More Unblocked Games by Static</a>
+	<span class="close" id="sq-mini-close" aria-label="Hide">×</span>
+</div>
+
+<!-- Bottom-right rotating Google Form and Instagram buttons -->
+<div id="sq-rotating" aria-label="StaticQuasar931 Links">
+	<a id="sq-form" class="sq-rot-btn" href="https://sites.google.com/view/staticquasar931/google-form" target="_blank" rel="noopener" title="Suggest a game">📝</a>
+	<a id="sq-ig" class="sq-rot-btn sr-hidden" href="https://www.instagram.com/freeschoolgamepage/" target="_blank" rel="noopener" title="Instagram">📷</a>
+</div>
+
+<!-- Hidden SEO content with internal links and keywords -->
+<div id="seo-coreball">
+	<h2>Play CoreBall Unblocked - School Safe</h2>
+	<p>
+		Play <strong>CoreBall</strong> right in your browser. This timing based arcade game is school safe and works on most Chromebooks. On
+		<a href="https://sites.google.com/view/staticquasar931" target="_blank" rel="noopener">StaticQuasar931</a> we focus on fast loading performance and clean embeds so you can enjoy the <em>CoreBall game</em> without blockers. If your network is strict, try opening our
+		<a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank" rel="noopener">games list</a> for more options.
+	</p>
+	<p>
+		Looking for <strong>CoreBall unblocked</strong> at school or work. This page is designed for accessibility with simple controls and no downloads. You can switch to other titles like
+		<a href="https://sites.google.com/view/staticquasar931/gm3z/subway-surfers_1/subway-surfers-main?authuser=0" target="_blank" rel="noopener">Subway Surfers</a> or the
+		<a href="https://sites.google.com/view/staticquasar931/gm3z/escape-road-fake-gta" target="_blank" rel="noopener">Escape Road</a> series after you beat a few levels.
+	</p>
+	<p>
+		Keywords include variations that people search: CoreBall, coreball classic, CoreBall game, CoreBall unblocked, CoreBall school, unblocked game, unblocked g@me, working at school, school-safe game, browser game, mobile game, free game online, static, staticquasar, staticquasar931, static 931, staticq931. We include alternate spellings like unbl0cked to help students find the right page.
+	</p>
+	<p>
+		Bookmark this canonical page: <a href="https://sites.google.com/view/staticquasar931/gm3z/coreball" target="_blank" rel="noopener">CoreBall on StaticQuasar931</a>. If something does not load, reload the page or return to the
+		<a href="https://sites.google.com/view/staticquasar931/gm3z" target="_blank" rel="noopener">main games list</a> and try another version. Enjoy and share with friends who need school friendly games.
+	</p>
+</div>
+
+<!-- Existing scripts -->
 <script src="js/jweixin-1.0.0.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<script src="js/index.js"></script>
+
+<!-- Mini utilities for UI behaviors -->
+<script>
+/* Top-left link hide then reappear after 3 minutes */
+(function(){
+  var mini = document.getElementById('sq-mini');
+  var btn = document.getElementById('sq-mini-close');
+  var HIDE_MS = 3 * 60 * 1000; // 3 minutes
+  function showMini(){ mini.style.display = 'flex'; }
+  function hideMini(){
+    mini.style.display = 'none';
+    setTimeout(showMini, HIDE_MS);
+  }
+  btn.addEventListener('click', hideMini);
+})();
+
+/* Rotate bottom-right buttons between Google Form and Instagram */
+(function(){
+  var a = document.getElementById('sq-form');
+  var b = document.getElementById('sq-ig');
+  var state = 0;
+  setInterval(function(){
+    state = 1 - state;
+    if(state){ a.classList.add('sr-hidden'); b.classList.remove('sr-hidden'); }
+    else { b.classList.add('sr-hidden'); a.classList.remove('sr-hidden'); }
+  }, 5000);
+})();
+
+/* Ensure RESET shows the Chinese status tip then hides after 1.5s without blocking gameplay */
+(function(){
+  var tip = document.getElementById('tip');
+  var btnReset = document.getElementById('btnReset');
+  if(btnReset){
+    btnReset.addEventListener('click', function(){
+      try { if(typeof window.resetLevel === 'function') window.resetLevel(); } catch(e){}
+      tip.style.display = 'block';
+      setTimeout(function(){ tip.style.display = 'none'; }, 1500);
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
